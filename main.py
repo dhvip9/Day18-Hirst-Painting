@@ -14,11 +14,11 @@ def rgb_finder(image_path):
     return rgb_colors_list
 
 
-def color_dots(times, dot_size, space):
+def color_dots(times, dot_size, horizontal_space):
     for _ in range(times):
         timmy.dot(dot_size, choice(colours))
         timmy.penup()
-        timmy.forward(space)
+        timmy.forward(horizontal_space)
 
 
 timmy = t.Turtle()
@@ -29,11 +29,11 @@ colours = rgb_finder("image.jpg")
 timmy.speed("fastest")
 timmy.penup()
 #
-a = 325
+vertical_space = 325
 for _ in range(19):
-    timmy.setpos(-340, a)
+    timmy.setpos(-340, vertical_space)
     timmy.pendown()
     color_dots(20, 15, 35)
-    a -= 35
+    vertical_space -= 35
 
 screen.exitonclick()    
